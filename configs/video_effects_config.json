@@ -1,0 +1,18 @@
+{
+  "display_name": "✨ Video Effects",
+  "category": "Video/Processing",
+  "function": "apply_effects",
+  "return_types": ["IMAGE", "INT"],
+  "return_names": ["processed_frames", "frame_count"],
+  "defaults": {
+    "brightness":        1.0,
+    "contrast":          1.0,
+    "saturation":        1.0,
+    "blur_radius":       0,
+    "vignette_strength": 0.0,
+    "grain_amount":      0.0,
+    "grain_seed":        42,
+    "speed":             1.0
+  },
+  "description": "Applies a stacked pipeline of visual post-processing effects to a video frame batch. Effects are executed in order: (1) colour grade via brightness/contrast/saturation, (2) Gaussian blur, (3) radial vignette, (4) additive film grain, (5) temporal speed ramp. All effects are pure-NumPy and require no additional dependencies beyond PyTorch. Set any value to its default/zero to disable that effect."
+}

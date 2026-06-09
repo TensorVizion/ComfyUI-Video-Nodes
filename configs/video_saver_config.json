@@ -1,0 +1,24 @@
+{
+  "display_name": "💾 Video Saver",
+  "category": "Video/IO",
+  "function": "save_video",
+  "return_types": ["STRING", "INT"],
+  "return_names": ["saved_path", "frames_written"],
+  "containers": {
+    "MP4 (H.264)": ".mp4",
+    "AVI (XVID)":  ".avi",
+    "WebM (VP8)":  ".webm"
+  },
+  "codecs": {
+    "MP4 (H.264)": "mp4v",
+    "AVI (XVID)":  "XVID",
+    "WebM (VP8)":  "VP80"
+  },
+  "defaults": {
+    "filename_prefix": "comfy_video",
+    "fps": 24.0,
+    "quality_crf": 18,
+    "add_timestamp": true
+  },
+  "description": "Encodes a batch of IMAGE frames into a video file and saves it to the ComfyUI output directory. Supports MP4, AVI, and WebM containers. When ffmpeg is available on the system PATH the CRF quality setting is applied via libx264/libvpx; otherwise OpenCV's default quality is used. A timestamp suffix can be appended to the filename to prevent accidental overwrites."
+}

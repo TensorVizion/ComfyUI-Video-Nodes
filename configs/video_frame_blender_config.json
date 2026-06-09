@@ -1,0 +1,13 @@
+{
+  "display_name": "🎞️ Video Frame Blender",
+  "category": "Video/Processing",
+  "function": "blend_frames",
+  "return_types": ["IMAGE", "INT"],
+  "return_names": ["interpolated_frames", "frame_count"],
+  "blend_modes": ["linear", "cubic", "optical"],
+  "defaults": {
+    "interpolation_steps": 2,
+    "loop": false
+  },
+  "description": "Inserts synthetically blended frames between each pair of source frames. 'linear' mode does a straight mix; 'cubic' applies a smooth-step ease for more natural motion; 'optical' is a placeholder for future flow-based interpolation. Use the 'loop' toggle to also blend between the last and first frame for seamless looping animations."
+}

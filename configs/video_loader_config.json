@@ -1,0 +1,14 @@
+{
+  "display_name": "🎬 Video Loader",
+  "category": "Video/IO",
+  "function": "load_video",
+  "return_types": ["IMAGE", "INT", "FLOAT", "STRING"],
+  "return_names": ["frames", "total_frames", "fps", "video_path"],
+  "supported_extensions": [".mp4", ".avi", ".mov", ".mkv", ".webm", ".gif"],
+  "defaults": {
+    "start_frame": 0,
+    "max_frames": 64,
+    "frame_skip": 0
+  },
+  "description": "Loads a video file and extracts individual frames as image tensors. Supports common video formats. Use frame_skip to sample every Nth frame and reduce memory usage for long videos."
+}

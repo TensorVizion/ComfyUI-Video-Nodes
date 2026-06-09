@@ -1,0 +1,83 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "comfyui-video-nodes"
+version = "0.1.0"
+description = "Four ComfyUI custom nodes for end-to-end video workflows: load, blend, apply effects, and save."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+
+keywords = ["comfyui", "video", "custom-nodes", "image-processing", "ai"]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: End Users/Desktop",
+    "Topic :: Multimedia :: Video",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+# torch and numpy are already provided by the ComfyUI environment,
+# so they are listed as soft dependencies via [project.optional-dependencies].
+dependencies = [
+    "opencv-python-headless>=4.8",
+]
+
+[project.optional-dependencies]
+# Install these if you are running outside a full ComfyUI environment
+standalone = [
+    "torch>=2.0",
+    "numpy>=1.24",
+]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov",
+    "ruff",
+    "mypy",
+]
+
+[project.urls]
+Homepage   = "https://github.com/yourname/comfyui-video-nodes"
+Issues     = "https://github.com/yourname/comfyui-video-nodes/issues"
+
+# ── ComfyUI Registry metadata ─────────────────────────────────────────────────
+[tool.comfy]
+PublisherId = "tensorvizion"
+
+# ── Package discovery ─────────────────────────────────────────────────────────
+[tool.setuptools.packages.find]
+where   = ["."]
+include = ["comfyui_video_nodes*"]
+
+[tool.setuptools.package-data]
+"comfyui_video_nodes" = ["configs/*.json", "README.md"]
+
+# ── Ruff (linter / formatter) ─────────────────────────────────────────────────
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP"]
+ignore = ["E501"]   # line-length handled by formatter
+
+[tool.ruff.format]
+quote-style = "double"
+
+# ── Mypy ──────────────────────────────────────────────────────────────────────
+[tool.mypy]
+python_version  = "3.9"
+strict          = false
+ignore_missing_imports = true   # torch stubs not always present
+
+# ── Pytest ────────────────────────────────────────────────────────────────────
+[tool.pytest.ini_options]
+testpaths    = ["tests"]
+addopts      = "-v --tb=short"
