@@ -1,0 +1,14 @@
+{
+  "display_name": "🔍 Image Sharpen",
+  "category": "Image/Filters",
+  "function": "sharpen_image",
+  "return_types": ["IMAGE"],
+  "return_names": ["sharpened_image"],
+  "defaults": {
+    "strength":  1.0,
+    "radius":    2,
+    "sigma":     1.0,
+    "threshold": 0.0
+  },
+  "description": "Applies unsharp masking to sharpen (or soften) an image or video frame batch. The unsharp mask is computed as: output = image + strength × (image − gaussian_blur(image)). Negative strength values produce a blur effect. The threshold parameter restricts sharpening to pixels where the edge magnitude exceeds the given value, reducing noise amplification in flat regions. Pure-NumPy implementation with no extra dependencies."
+}

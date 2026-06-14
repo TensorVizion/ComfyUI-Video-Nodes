@@ -1,0 +1,14 @@
+{
+  "display_name": "✂️ Image Crop",
+  "category": "Image/Transform",
+  "function": "crop_image",
+  "return_types": ["IMAGE", "INT", "INT"],
+  "return_names": ["cropped_image", "crop_width", "crop_height"],
+  "defaults": {
+    "x": 0,
+    "y": 0,
+    "width": 512,
+    "height": 512
+  },
+  "description": "Crops a rectangular region from an IMAGE tensor (single image or batch). The x/y coordinates define the top-left corner of the crop box. Values are automatically clamped to the image bounds so no out-of-range error is raised. Returns the cropped image together with the resulting width and height."
+}

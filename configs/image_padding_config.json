@@ -1,0 +1,16 @@
+{
+  "display_name": "🖼 Image Padding",
+  "category": "Image/Transform",
+  "function": "pad_image",
+  "return_types": ["IMAGE", "INT", "INT"],
+  "return_names": ["padded_image", "out_width", "out_height"],
+  "defaults": {
+    "pad_top":    0,
+    "pad_bottom": 0,
+    "pad_left":   0,
+    "pad_right":  0,
+    "mode":       "constant",
+    "pad_value":  0.0
+  },
+  "description": "Adds padding to any combination of edges of an IMAGE tensor. Three modes are supported: constant (solid fill colour set by pad_value), reflect (mirror-reflects image pixels at the border — useful for seamless tiling), and replicate (repeats the outermost edge pixels outward — good for avoiding dark halos). If the requested padding exceeds the image size when using reflect or replicate mode, the node automatically falls back to constant padding."
+}

@@ -1,0 +1,15 @@
+{
+  "display_name": "📡 Image Noise",
+  "category": "Image/Filters",
+  "function": "add_noise",
+  "return_types": ["IMAGE"],
+  "return_names": ["noisy_image"],
+  "defaults": {
+    "noise_type": "gaussian",
+    "amount":     0.05,
+    "salt_ratio": 0.5,
+    "seed":       42,
+    "monochrome": false
+  },
+  "description": "Adds controllable noise to a still image or video frame batch. Four noise types are available: gaussian (normally-distributed additive noise, ideal for simulating film grain), salt_and_pepper (random black/white pixel speckle), uniform (flat-distribution additive noise), and fade (low-frequency smooth value noise for a large-scale grain effect). The monochrome flag applies a single-channel noise pattern to all colour channels, producing greyscale noise rather than coloured speckle."
+}

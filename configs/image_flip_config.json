@@ -1,0 +1,12 @@
+{
+  "display_name": "🔁 Image Flip",
+  "category": "Image/Transform",
+  "function": "flip_image",
+  "return_types": ["IMAGE"],
+  "return_names": ["flipped_image"],
+  "defaults": {
+    "flip_h": true,
+    "flip_v": false
+  },
+  "description": "Flips an IMAGE tensor horizontally (left–right mirror), vertically (top–bottom mirror), or both simultaneously. Works on single images and batches. No interpolation is performed — this is a lossless pixel rearrangement."
+}

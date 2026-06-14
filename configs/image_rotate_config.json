@@ -1,0 +1,13 @@
+{
+  "display_name": "🔄 Image Rotate",
+  "category": "Image/Transform",
+  "function": "rotate_image",
+  "return_types": ["IMAGE", "INT", "INT"],
+  "return_names": ["rotated_image", "out_width", "out_height"],
+  "defaults": {
+    "angle": 0.0,
+    "expand": false,
+    "fill_value": 0.0
+  },
+  "description": "Rotates an IMAGE tensor by an arbitrary angle (degrees) using OpenCV's affine warp. Positive angles rotate counter-clockwise. When expand is True the output canvas is automatically enlarged so no pixels are clipped. Border areas are filled with fill_value (0 = black, 1 = white). Requires opencv-python-headless."
+}

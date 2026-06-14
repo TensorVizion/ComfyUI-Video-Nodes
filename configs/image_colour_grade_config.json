@@ -1,0 +1,16 @@
+{
+  "display_name": "🎨 Image Colour Grade",
+  "category": "Image/Colour",
+  "function": "colour_grade",
+  "return_types": ["IMAGE"],
+  "return_names": ["graded_image"],
+  "defaults": {
+    "brightness":  1.0,
+    "contrast":    1.0,
+    "saturation":  1.0,
+    "hue_shift":   0.0,
+    "gamma":       1.0,
+    "temperature": 0.0
+  },
+  "description": "Full-featured colour-grading node for still images and video frame batches. Processing pipeline: (1) temperature shift — warms or cools the image; (2) multiplicative brightness; (3) contrast pivoted at mid-grey; (4) power-curve gamma; (5) hue rotation via HSV; (6) saturation scaling via HSV. All operations are pure-NumPy and require no additional dependencies. Set any parameter to its neutral value to disable that stage."
+}

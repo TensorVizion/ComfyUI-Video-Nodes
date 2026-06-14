@@ -1,0 +1,12 @@
+{
+  "display_name": "🖼️ Image Blend",
+  "category": "Image/Compositing",
+  "function": "blend_images",
+  "return_types": ["IMAGE"],
+  "return_names": ["blended_image"],
+  "defaults": {
+    "blend_mode": "normal",
+    "alpha": 1.0
+  },
+  "description": "Blends two IMAGE tensors using Photoshop-style blend modes (normal, multiply, screen, overlay, soft_light, hard_light, difference, add, subtract, dodge, burn). image_b is automatically resized to match image_a's resolution if they differ. The alpha parameter controls how much of the blended result is mixed back with the original image_a (0 = only image_a, 1 = fully blended)."
+}

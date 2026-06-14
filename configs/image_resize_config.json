@@ -1,0 +1,15 @@
+{
+  "display_name": "📐 Image Resize",
+  "category": "Image/Transform",
+  "function": "resize_image",
+  "return_types": ["IMAGE", "INT", "INT"],
+  "return_names": ["resized_image", "out_width", "out_height"],
+  "defaults": {
+    "width": 512,
+    "height": 512,
+    "interpolation": "bilinear",
+    "keep_aspect": false,
+    "pad_value": 0.0
+  },
+  "description": "Resizes an IMAGE tensor to an explicit width × height using a choice of four interpolation modes (bilinear, nearest, bicubic, area). When keep_aspect is enabled the image is scaled to fit inside the target box and the remaining space is filled with pad_value, preserving the original aspect ratio without distortion."
+}
