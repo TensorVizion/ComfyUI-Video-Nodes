@@ -1,0 +1,15 @@
+{
+  "display_name": "🔀 Checkpoint Merger",
+  "category": "Model/Merge",
+  "function": "merge_checkpoints",
+  "return_types": ["MODEL", "STRING"],
+  "return_names": ["merged_model", "info"],
+  "defaults": {
+    "ratio": 0.5,
+    "merge_method": "weighted_sum",
+    "precision": "fp16"
+  },
+  "merge_methods": ["weighted_sum", "add_difference"],
+  "precisions": ["fp16", "bf16", "fp32"],
+  "description": "Merges two MODEL checkpoints into one. weighted_sum: out = A*ratio + B*(1-ratio). add_difference: out = A + (A-B)*ratio — useful for style injection. Keys present in only one model are passed through unchanged. Output precision is cast before returning to control VRAM."
+}

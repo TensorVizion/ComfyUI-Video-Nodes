@@ -1,0 +1,17 @@
+{
+  "display_name": "📊 Image Histogram",
+  "category": "Image/Analysis",
+  "function": "process_histogram",
+  "return_types": ["IMAGE", "IMAGE", "STRING"],
+  "return_names": ["processed_image", "histogram_image", "stats"],
+  "defaults": {
+    "mode": "none",
+    "channel": "rgb",
+    "vis_width": 512,
+    "vis_height": 200,
+    "clip_limit": 2.0
+  },
+  "modes": ["none", "equalize", "clahe", "stretch"],
+  "channels": ["rgb", "r", "g", "b", "luminance"],
+  "description": "Analyses and optionally adjusts the tonal distribution of an image. mode=none passes the image through unchanged and just outputs the histogram visualisation and stats. equalize applies global histogram equalisation. clahe uses OpenCV's Contrast Limited AHE (requires opencv-python-headless). stretch linearly remaps the darkest and brightest pixels to 0 and 1. The histogram_image output is a (1, vis_height, vis_width, 3) tensor you can connect to a Preview Image node."
+}

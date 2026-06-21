@@ -1,0 +1,13 @@
+{
+  "display_name": "🎞️ Video Concat",
+  "category": "Video/IO",
+  "function": "concat_videos",
+  "return_types": ["IMAGE", "INT"],
+  "return_names": ["frames", "frame_count"],
+  "defaults": {
+    "crossfade_frames": 0,
+    "match_resolution": "resize_to_first"
+  },
+  "resolution_modes": ["resize_to_first", "resize_to_largest", "resize_to_smallest"],
+  "description": "Concatenates two or three IMAGE frame batches end-to-end into a single sequence. Optional crossfade_frames adds a linear blend between each join point. match_resolution controls how clips with different dimensions are reconciled before joining. clip_3 is optional — leave it disconnected to join only two clips."
+}

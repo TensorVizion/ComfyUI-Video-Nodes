@@ -1,0 +1,14 @@
+{
+  "display_name": "🔗 LoRA Merger",
+  "category": "Model/Merge",
+  "function": "apply_loras",
+  "return_types": ["MODEL", "CLIP", "STRING"],
+  "return_names": ["model", "clip", "info"],
+  "defaults": {
+    "lora_1_weight": 1.0,
+    "lora_2_weight": 0.75,
+    "lora_3_weight": 0.5,
+    "clip_weight": 1.0
+  },
+  "description": "Applies up to three LoRA files to a MODEL+CLIP simultaneously, each at its own strength. Uses ComfyUI's internal comfy.sd.load_lora_for_models — the same engine as the built-in Load LoRA node. LoRA 2 and 3 are optional; set their dropdown to 'none' to skip. Returns the merged MODEL and CLIP plus a summary string."
+}

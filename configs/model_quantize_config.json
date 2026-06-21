@@ -1,0 +1,14 @@
+{
+  "display_name": "⚡ Model Quantize",
+  "category": "Model/Quantize",
+  "function": "quantize_model",
+  "return_types": ["MODEL", "STRING"],
+  "return_names": ["quantized_model", "info"],
+  "defaults": {
+    "precision": "fp16",
+    "layers": "linear_only"
+  },
+  "precisions": ["fp16", "bf16", "int8"],
+  "layer_targets": ["linear_only", "all"],
+  "description": "Converts a loaded MODEL's weights to a lower-precision dtype to reduce VRAM usage. fp16 and bf16 halve VRAM and work on GPU; int8 applies dynamic quantisation to Linear layers (best on CPU or for export). Returns the patched model and a summary string."
+}

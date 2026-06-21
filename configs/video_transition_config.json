@@ -1,0 +1,15 @@
+{
+  "display_name": "🎬 Video Transition",
+  "category": "Video/Processing",
+  "function": "apply_transition",
+  "return_types": ["IMAGE", "INT"],
+  "return_names": ["frames", "frame_count"],
+  "defaults": {
+    "transition_type": "crossfade",
+    "transition_frames": 24,
+    "ease": "smooth"
+  },
+  "transition_types": ["crossfade", "wipe_left", "wipe_right", "wipe_up", "wipe_down", "zoom_blur"],
+  "ease_types": ["linear", "smooth", "sharp"],
+  "description": "Stitches two IMAGE frame batches together with an animated transition. Output is [clip_a] + [transition frames] + [clip_b]. transition_frames controls the length of the transition zone. ease shapes the blend curve: linear is constant-speed, smooth uses a cubic ease-in-out, sharp snaps quickly at the midpoint."
+}

@@ -1,0 +1,12 @@
+{
+  "display_name": "⚡ VAE Quantize",
+  "category": "Model/Quantize",
+  "function": "quantize_vae",
+  "return_types": ["VAE", "STRING"],
+  "return_names": ["quantized_vae", "info"],
+  "defaults": {
+    "precision": "fp16"
+  },
+  "precisions": ["fp16", "bf16", "fp32"],
+  "description": "Converts a loaded VAE's weights to a lower-precision dtype. VAEs are numerically sensitive, so int8 is intentionally excluded — fp16 is the recommended minimum. fp32 can be used to upcast a half-precision VAE back to full precision when you see colour-banding artefacts in decoded images."
+}
